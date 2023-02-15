@@ -13,7 +13,7 @@ pipeline {
     }
 
     environment {
-        APP_NAME = "DCUBE_APP"
+        APP_NAME = "DEMO"
         APP_ENV  = "DEV"
     }
 
@@ -31,7 +31,7 @@ pipeline {
                 checkout([
                     $class: 'GitSCM', 
                     branches: [[name: '*/main']], 
-                    userRemoteConfigs: [[url: 'https://github.com/Vaishali-Tapaswi/spring-petclinic.git']]
+                    userRemoteConfigs: [[url: 'https://github.com/Vaishali-Tapaswi/mymavenproj']]
                 ])
             }
         }
@@ -41,14 +41,5 @@ pipeline {
                  bat 'mvn install package'
             }
         }
-
-        stage('Priting All Global Variables') {
-            steps {
-                bat """
-                env
-                """
-            }
-        }
-
-    }   
+		}   
 }
