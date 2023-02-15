@@ -31,7 +31,7 @@ pipeline {
                 checkout([
                     $class: 'GitSCM', 
                     branches: [[name: '*/main']], 
-                    userRemoteConfigs: [[url: 'https://github.com/Vaishali-Tapaswi/mymavenproj']]
+                    userRemoteConfigs: [[url: 'https://github.com/Vaishali-Tapaswi/javademo']]
                 ])
             }
         }
